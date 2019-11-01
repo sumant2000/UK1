@@ -4,17 +4,17 @@ import org.springframework.stereotype.Service;
 import uk.co.huntersix.spring.rest.model.Person;
 
 import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
 public class PersonDataService {
-    public static  List<Person> PERSON_DATA = Arrays.asList(
+    public static  List<Person> PERSON_DATA = new ArrayList<>(Arrays.asList(
         new Person("Mary", "Smith"),
             new Person("Madonna", "Smith"),
         new Person("Brian", "Archer"),
-        new Person("Collin", "Brown")
-    );
+        new Person("Collin", "Brown")));
 
     public Person findPerson(String lastName, String firstName) {
        boolean exists= PERSON_DATA.stream()
