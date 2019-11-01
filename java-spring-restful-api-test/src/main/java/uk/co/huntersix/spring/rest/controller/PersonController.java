@@ -44,7 +44,7 @@ public class PersonController {
 
     }
 
-    @PostMapping("/newperson/{lastName}/{firstName}")
+    @PostMapping("/newperson")
     public ResponseEntity<Person> createPerson(@RequestBody Person person) {
         Person savedPerson = personDataService.save(person);
         return ResponseEntity.created(URI.create("/newperson/" + savedPerson.getLastName()+ savedPerson.getFirstName())).build();
